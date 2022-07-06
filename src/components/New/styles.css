@@ -1,0 +1,9 @@
+.mainNew{
+    width:800px;
+    height:80px;
+    background-color: white;
+    display:flex;
+    margin:auto;
+    justify-content: space-around;
+    align-items: center;
+}

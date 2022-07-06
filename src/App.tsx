@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Total from './components/Total/index'
+import New from './components/New/index'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div>
+      <header className="header">
+        Sistema Financeiro
       </header>
+      <Total/>
+      <New/>
+
+
+      <footer className="footer">
+        Created by Ramon
+      </footer>
     </div>
   );
 }
 
 export default App;
+
+
+
+/* 
+
+Components:
+
+Display total
+Input expense
+Expense list 
+Header 
+Footer
+
+--------------
+
+Total = Income - Outcome
+Add income or outcome
+Delete income or outcome
+Date of the expense / value / category / Name
+
+
+*/
