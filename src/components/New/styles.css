@@ -1,9 +1,12 @@
 .mainNew{
-    width:800px;
-    height:80px;
+    max-width:800px;
+    min-height:80px;
     background-color: white;
     display:flex;
+    flex-wrap: wrap;
     margin:auto;
     justify-content: space-around;
     align-items: center;
+    margin-top:20px;
+    border-radius: 10px;
 }

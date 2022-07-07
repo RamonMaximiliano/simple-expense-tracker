@@ -5,7 +5,6 @@ function Total() {
         <div className="mainTotal">
             <div>
                 Month
-
             </div>
             <div>
                 <p>Receita</p>

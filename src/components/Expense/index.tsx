@@ -1,7 +1,18 @@
 function Expense(){
     return (
         <div>
-            Expense
+            <div>
+                Date
+            </div>
+            <div>
+                <p>categoria</p>
+            </div>
+            <div>
+                <p>Titulo</p>
+            </div>
+            <div>
+                <p>R$ 0,00</p>
+            </div>
         </div>
 
     )

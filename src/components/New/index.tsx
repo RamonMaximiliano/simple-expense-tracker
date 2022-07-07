@@ -1,15 +1,19 @@
 import './styles.css'
 
-function New(){
+function New() {
     return (
         <div className="mainNew">
             <div>
-            <p>Data</p>
-            <input type="date"></input>
+                <p>Data</p>
+                <input type="date"></input>
             </div>
             <div>
-                <p>Categoria</p>
-                <p>R$ 0,00</p>
+                <label>Categoria</label><br></br>
+                <select>
+                    <option>Alimentação</option>
+                    <option>Aluguel</option>
+                    <option>Salário</option>
+                </select>
             </div>
             <div>
                 <p>Título</p>
@@ -25,3 +29,4 @@ function New(){
 }
 
 export default New
+
