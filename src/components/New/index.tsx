@@ -1,8 +1,16 @@
 import './styles.css'
+import {useState} from 'react'
 
-function New() {
+type Str = string
+
+function New(props:any) {
+    const [titulo, setTitulo] = useState<Str>('')
+
+
+    console.log(titulo)
+
     return (
-        <div className="mainNew">
+        <form className="mainNew" onSubmit={props.onsubmitExpense}>
             <div>
                 <p>Data</p>
                 <input type="date"></input>
@@ -17,14 +25,14 @@ function New() {
             </div>
             <div>
                 <p>Título</p>
-                <input type="text"></input>
+                <input type="text" onChange={e => setTitulo(e.target.value)}></input>
             </div>
             <div>
                 <p>Valor</p>
                 <input type="number"></input>
             </div>
             <input type="button" value="Adicionar"></input>
-        </div>
+        </form>
     )
 }
 

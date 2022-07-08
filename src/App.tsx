@@ -41,13 +41,21 @@ function App() {
   ]
 
 
+function submitExpense(event:any){
+  event.preventDefault()
+  console.log('Hello there!')
+}
+
+
+
+
   return (
     <div>
       <header className="header">
         Sistema Financeiro
       </header>
       <Total />
-      <New />
+      <New onsubmitExpense={submitExpense}/>
       {
         expenseItems.map(exp => <Expense date={exp.date} category={exp.category} title={exp.title} value={exp.value} />)
       }
