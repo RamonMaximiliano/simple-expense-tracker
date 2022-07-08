@@ -1,21 +1,32 @@
-function Expense(){
+import './styles.css'
+
+type Props = {
+    date: string,
+    category: string,
+    title: string,
+    value: number
+}
+
+function Expense({date,category,title,value}:Props){
     return (
-        <div>
+        <div className="expenseItem">
             <div>
-                Date
+                {date}
             </div>
             <div>
-                <p>categoria</p>
+                <p>{category}</p>
             </div>
             <div>
-                <p>Titulo</p>
+                <p>{title}</p>
             </div>
             <div>
-                <p>R$ 0,00</p>
+                <p>{value}</p>
             </div>
         </div>
-
     )
 }
 
 export default Expense
+
+
+
