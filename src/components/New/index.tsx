@@ -40,7 +40,6 @@ function New({onsubmitExpense}:Props) {
 
         //limpando os campos após enviar o novo item
         setData('')
-        setCategoria('')
         setTitulo('')
         setValor(0)
     }
@@ -59,6 +58,7 @@ function New({onsubmitExpense}:Props) {
                     <option>Alimentação</option>
                     <option>Aluguel</option>
                     <option>Salário</option>
+                    <option>Outros</option>
                 </select>
             </div>
             <div>
