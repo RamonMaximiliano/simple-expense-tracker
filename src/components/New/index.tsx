@@ -3,26 +3,32 @@ import {useState} from 'react'
 
 type Str = string
 type Num = number
+type Item = {
+    date: string,
+    category: string,
+    title: string,
+    value: number
+}
 
+//O props abaixo fiquei confuso, rever video Boni entender o porque, acho que é porque obrigatóriamente precisa de um tipo pra função 
+ type Props = {
+    onsubmitExpense: (item: Item)=> void;
+  }; 
 
-//limpar os inputs quando acionar o Adicionar
-
-function New(props:any) {
-    //Criar um state para cada field do expense input
+function New({onsubmitExpense}:Props) {
+    //Criado um state para cada field do expense input
     const [data, setData] = useState<Str>('')
     const [categoria, setCategoria] = useState<Str>('')
     const [titulo, setTitulo] = useState<Str>('')
     const [valor, setValor] = useState<Num>(0)
  
    function newExpense(){
-        console.log(
-            {
-                date: data,
-                category: categoria,
-                title: titulo,
-                value: valor
-            }
-        )
+        onsubmitExpense({
+            date: data,
+            category: categoria,
+            title: titulo,
+            value: valor
+        })    
         setData('')
         setCategoria('')
         setTitulo('')
@@ -55,6 +61,9 @@ function New(props:any) {
         </form>
     )
 }
-
 export default New
 
+
+//limpar os inputs quando acionar o Adicionar
+//validar campos vazios
+//Dar erro se tenta adicionar algo em branco

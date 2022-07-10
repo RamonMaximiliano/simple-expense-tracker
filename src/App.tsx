@@ -1,4 +1,5 @@
 import React from 'react';
+import {useState} from 'react'
 import './App.css';
 import Total from './components/Total/index'
 import New from './components/New/index'
@@ -12,7 +13,10 @@ type Item = {
 }
 
 function App() {
+  const [expense, setExpense] = useState<Item>()
 
+
+  //Posteriormente fazer essa const virar um State
   const expenseItems: Item[] = [
     {
       date: '15/10/2021',
@@ -40,22 +44,15 @@ function App() {
     }
   ]
 
-
-function submitExpense(event:any){
-  event.preventDefault()
-  console.log('Hello there!')
-}
-
-
-
-
+ console.log(expense)
+ 
   return (
     <div>
       <header className="header">
         Sistema Financeiro
       </header>
       <Total />
-      <New onsubmitExpense={submitExpense}/>
+      <New onsubmitExpense={setExpense}/>
       {
         expenseItems.map(exp => <Expense date={exp.date} category={exp.category} title={exp.title} value={exp.value} />)
       }
@@ -85,6 +82,9 @@ Total = Income - Outcome
 Add income or outcome
 Delete income or outcome
 Date of the expense / value / category / Name
+
+
+verificar sobre colocar IDs nas expenses para poder excluir-las
 
 
 */
