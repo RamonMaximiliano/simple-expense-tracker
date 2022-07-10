@@ -58,7 +58,8 @@ function New({onsubmitExpense}:Props) {
                     <option>Alimentação</option>
                     <option>Aluguel</option>
                     <option>Salário</option>
-                    <option>Outros</option>
+                    <option>Outras despesas</option>
+                    <option>Outras rendas</option>
                 </select>
             </div>
             <div>

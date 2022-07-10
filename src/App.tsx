@@ -13,6 +13,12 @@ type Item = {
   key?: number | undefined
 }
 
+type Math = {
+  positive: number,
+  negative: number,
+  total:number
+}
+
 function App() {
   const [expense, setExpense] = useState<Item>()
   const [expenseList, setExpenseList] = useState<Item[]>([])
@@ -34,29 +40,31 @@ function App() {
   }, [expense]);
 
 
-
-  //TOTALS
+   //TOTALS
   let totalPositive: number = 0
   let totalnegative: number = 0
 
   expenseItems.forEach((expenseListTotal) => {
-    if(expenseListTotal.category === 'Alimentação' || expenseListTotal.category === 'Aluguel' || expenseListTotal.category === 'Outros'){
+    if(expenseListTotal.category === 'Alimentação' || expenseListTotal.category === 'Aluguel' || expenseListTotal.category === 'Outras despesas'){
       totalnegative += Number(expenseListTotal.value)
-      console.log(`This is the negatives${totalnegative}`)
-    } else if (expenseListTotal.category === 'Salário' ){
+    } else if (expenseListTotal.category === 'Salário' || expenseListTotal.category === 'Outras rendas' ){
       totalPositive += Number(expenseListTotal.value)
-      console.log(`This is the positives ${totalPositive}`)
     }
   })
-  //TOTALS
+ 
+  let amounts:Math = {
+    positive: totalPositive,
+    negative: totalnegative,
+    total:totalPositive-totalnegative
+  }
+   //TOTALS
 
-
-  return (
+return (
     <div>
       <header className="header">
         Sistema Financeiro
       </header>
-      <Total />
+      <Total positive={amounts.positive} negative={amounts.negative} total={amounts.total}/>
       <New onsubmitExpense={setExpense} />
       {
         expenseItems.map(exp => <Expense date={exp.date} category={exp.category} title={exp.title} value={exp.value} />)
@@ -70,16 +78,13 @@ function App() {
 
 export default App;
 
-
 /* 
-
 --------------
-
+Limpar lista sem dar refresh na pagina
 Delete income or outcome
 verificar sobre colocar IDs nas expenses para poder excluir-las
-
-Adicionar informações de total etc, Total = Income - Outcome
 Total verde ou vermelho conforme valor 
 Adicionar Month conforme maquina do User
+Estilisar tudo com CSS
 
 */
