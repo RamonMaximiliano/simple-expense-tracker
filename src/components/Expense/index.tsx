@@ -1,10 +1,11 @@
 import './styles.css'
 
 type Props = {
-    date: string,
-    category: string,
-    title: string,
-    value: number
+    date: string | undefined,
+    category: string | undefined,
+    title: string | undefined,
+    value: number| undefined,
+    key?: number| undefined
 }
 
 function Expense({date,category,title,value}:Props){
