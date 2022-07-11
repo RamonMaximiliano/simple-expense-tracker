@@ -1,16 +1,18 @@
 import './styles.css'
 
- type Props = {
+type Props = {
     positive: number,
     negative: number,
-    total:number
-} 
+    total: number,
+    month?: string,
+    year?: number
+}
 
-function Total(props:Props) {
+function Total(props: Props) {
     return (
         <div className="mainTotal">
             <div>
-                Month
+                {props.month} {props.year}
             </div>
             <div>
                 <p>Receita</p>
@@ -18,7 +20,7 @@ function Total(props:Props) {
             </div>
             <div>
                 <p>Despesa</p>
-                <p>R$ {props.positive}</p>
+                <p>R$ {props.negative}</p>
             </div>
             <div>
                 <p>Balanço</p>

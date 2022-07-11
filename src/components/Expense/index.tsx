@@ -4,11 +4,11 @@ type Props = {
     date: string | undefined,
     category: string | undefined,
     title: string | undefined,
-    value: number| undefined,
-    key?: number| undefined
+    value: number | undefined,
+    key?: number | undefined
 }
 
-function Expense({date,category,title,value}:Props){
+function Expense({ date, category, title, value }: Props) {
     return (
         <div className="expenseItem">
             <div>
