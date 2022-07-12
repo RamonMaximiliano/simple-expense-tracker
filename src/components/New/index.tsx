@@ -46,7 +46,7 @@ function New({ onsubmitExpense }: Props) {
     }
 
     return (
-        <form className="mainNew">
+        <div className="mainNew">
             <div className="subNew">
                 <p className="subTitle"><strong>Data</strong></p>
                 <input id="dateInput" type="date" onChange={e => setData(String(e.target.value))} value={data}></input>
@@ -73,7 +73,7 @@ function New({ onsubmitExpense }: Props) {
             <div >
                 <input type="button" value="Adicionar" onClick={newExpense} className="addButton"></input>
             </div>
-        </form>
+        </div>
     )
 }
 export default New

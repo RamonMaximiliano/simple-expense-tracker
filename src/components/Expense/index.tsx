@@ -11,17 +11,22 @@ type Props = {
 function Expense({ date, category, title, value }: Props) {
     return (
         <div className="expenseItem">
-            <div>
-                {date}
+            <div className="expenseDate">
+                <p>{date}</p>
             </div>
-            <div>
-                <p>{category}</p>
+            <div className="expenseCat">
+                <p className="categoryText" style={{backgroundColor: category == 'Salário' || category == 'Outras rendas' ? "rgb(9, 83, 243)" : "rgb(228, 5, 5)",}}
+                >{category}</p>
             </div>
-            <div>
+            <div className="expenseTitle">
                 <p>{title}</p>
             </div>
-            <div>
-                <p>{value}</p>
+            <div className="expenseValue">
+                <p
+                style={{color: category == 'Salário' || category == 'Outras rendas' ? "rgb(3, 168, 3)" : "rgb(228, 5, 5)",}}
+                
+                
+                >R$ {value}</p>
             </div>
         </div>
     )
@@ -29,5 +34,6 @@ function Expense({ date, category, title, value }: Props) {
 
 export default Expense
 
-
-
+/*
+style={{background-color: category == 'Salário' ? "rgb(3, 201, 3)" : "red",}}  
+*/
