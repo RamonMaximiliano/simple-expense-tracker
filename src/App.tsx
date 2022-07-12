@@ -130,7 +130,7 @@ function App() {
         <input type="button" onClick={reset} value="Reset" className="resetButton"></input>
       </div>
       <footer className="footer">
-        Created by Ramon Test
+        Created by Ramon
       </footer>
     </div>
   );
